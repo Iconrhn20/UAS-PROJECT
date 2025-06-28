@@ -1,0 +1,509 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+/* --- Reset & Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  overflow-x: hidden; /* Prevents horizontal scrollbar on all devices */
+}
+
+body {
+  width: 100%;
+  min-height: 100vh; /* Ensures content can extend */
+  background-color: #191919;
+  color: white; /* Default text color for body */
+}
+
+/* --- Header & Navigation --- */
+header {
+  position: fixed; /* Header stays at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 9%; /* Adjust padding for better spacing */
+  background-color: transparent; /* Initially transparent */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Ensure header is on top */
+  transition: background-color 0.3s ease;
+}
+
+/* Optional: Add this class via JavaScript when scrolled */
+header.scrolled {
+  background-color: #161616; /* Background color when scrolled */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 3rem;
+  color: #e3651d; /* Orange color for logo */
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Desktop Menu */
+nav {
+  display: flex; /* Uses flexbox for desktop links */
+  align-items: center;
+}
+
+nav a {
+  font-size: 1.8rem;
+  color: white;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  color: #e3651d;
+  border-bottom: 3px solid #e3651d;
+}
+
+/* --- Mobile Menu Icon (Hamburger) --- */
+.menu-icon {
+  font-size: 3.6rem; /* Icon size */
+  color: white;
+  cursor: pointer;
+  display: none; /* Hidden on desktop */
+  z-index: 1001; /* Ensure it's above navigation */
+}
+
+/* --- Section General Styling --- */
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 5rem; /* Adjust top padding to clear fixed header */
+}
+
+/* --- Home Section Specific Styling (If used on index.html) --- */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  background-color: #191919;
+}
+
+.home .home-content h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+span {
+  color: #e3651d;
+}
+
+.home-content h3 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.home-content p {
+  font-size: 1.6rem;
+  color: white; /* Ensure text is visible on dark background */
+}
+
+.home-img {
+  border-radius: 50%;
+}
+
+.home-img img {
+  position: relative;
+  width: 32vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #e3651d;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.home-img img:hover {
+  transform: scale(1.05);
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+  border: 0.2rem solid #e3651d;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease;
+  color: #e3651d;
+}
+
+.social-icons a:hover {
+  color: #191919;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #e3651d;
+  box-shadow: 0 0 25px #e3651d;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background-color: #191919;
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  color: #e3651d;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+  border: 2px solid #e3651d;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  background-color: #e3651d;
+  color: #191919;
+  box-shadow: 0 0 25px #e3651d;
+}
+
+.typing-text {
+  font-size: 3.4rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.cursor {
+  position: absolute;
+  top: 0;
+  font-weight: 1000;
+  animation: blink 0.7s step-end infinite;
+  left: 0;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- Main Content Area for Education/Experience Pages --- */
+main {
+  /* Adjusted padding and margin for pages with main content sections */
+  padding: 20px; /* Use 20px for consistency with education-section padding */
+  max-width: 1000px; /* Wider content area for sections */
+  margin: 10rem auto 2rem auto; /* Ensure enough space from fixed header */
+  background-color: #212121; /* Slightly lighter dark background for content */
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3); /* Deeper shadow */
+  color: white; /* Default text color for main content */
+}
+
+/* --- Education Section Styling --- */
+.education-section {
+  padding: 20px; /* Already defined inside main, so 20px is good */
+}
+
+.education-section h1 {
+  text-align: center;
+  color: #e3651d; /* Changed to match theme's primary color */
+  margin-bottom: 40px;
+  font-size: 3.5rem; /* Using rem for consistency */
+}
+
+/* Individual Education Item Styling */
+.education-item {
+  background-color: #2c2c2c; /* Slightly lighter background for each item */
+  border-left: 5px solid #e3651d; /* Changed to theme's primary color */
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+}
+
+.education-item h2 {
+  color: #f0f0f0; /* Lighter white for heading */
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2.2rem; /* Using rem */
+}
+
+.education-item .tahun {
+  color: #b0b0b0; /* Lighter grey for years */
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 1.6rem; /* Using rem */
+}
+
+.education-item .deskripsi {
+  color: #cccccc; /* Light grey for description */
+  line-height: 1.8;
+  font-size: 1.7rem; /* Using rem */
+}
+
+/* --- Intro Section Styling (for Experience page) --- */
+.intro-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #2c2c2c;
+  border-radius: 8px;
+  color: white; /* Ensure text is visible */
+}
+
+.intro-section h1 {
+  color: #e3651d; /* Match theme color */
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro-section p {
+  font-size: 1.8rem;
+  color: #cccccc; /* Lighter text color */
+  line-height: 1.7;
+}
+
+/* --- Gallery Section Styles (Wisata & Hobi on Experience page) --- */
+.hobbies-section {
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.hobbies-section h2 {
+  text-align: center;
+  color: #e3651d; /* Match theme color */
+  margin-bottom: 30px;
+  font-size: 3rem;
+}
+
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); /* Responsive grid */
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.hobby-item {
+  background-color: #2c2c2c;
+  border: 1px solid #3a3a3a; /* Darker border */
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  color: white; /* Default text color for hobby item */
+}
+
+.hobby-item:hover {
+  transform: translateY(-0.8rem);
+}
+
+.hobby-item .image {
+  height: 250px; /* Fixed height for images */
+  overflow: hidden;
+}
+
+.hobby-item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hobby-item h3 {
+  color: #e3651d; /* Heading color */
+  font-size: 2rem;
+  margin: 1.5rem 1rem 1rem;
+}
+
+.hobby-item p {
+  color: #cccccc; /* Description text color */
+  font-size: 1.5rem;
+  padding: 0 1.5rem 2rem;
+  line-height: 1.6;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 5rem;
+  background-color: #161616; /* Dark background for footer */
+  color: white;
+  font-size: 1.4rem;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 995px) {
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    padding: 1.5rem 5%;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(22, 22, 22, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+  }
+
+  nav.active {
+    left: 0;
+  }
+
+  nav a {
+    margin: 2rem 0;
+    font-size: 2.5rem;
+  }
+
+  nav a:hover,
+  nav a.active {
+    background-color: #e3651d;
+    color: #191919;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border-bottom: none;
+  }
+
+  /* Home section in mobile (if index.html uses this) */
+  .home {
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+    padding: 10rem 5% 5rem;
+  }
+
+  .home .home-content h1 {
+    font-size: 5rem;
+  }
+
+  .home-content h3 {
+    font-size: 3rem;
+  }
+
+  .home-img img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  /* Main content area for smaller screens */
+  main {
+    margin: 8rem auto 2rem auto; /* Adjust margin for smaller screens */
+    padding: 1.5rem;
+  }
+
+  /* Education section in mobile */
+  .education-section h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .education-item {
+    padding: 1.5rem;
+  }
+
+  .education-item h2 {
+    font-size: 2rem;
+  }
+
+  .education-item .tahun,
+  .education-item .deskripsi {
+    font-size: 1.5rem;
+  }
+
+  /* Hobbies section in mobile */
+  .hobbies-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hobby-grid {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+  }
+
+  .hobby-item .image {
+    height: 200px;
+  }
+
+  .hobby-item h3 {
+    font-size: 1.8rem;
+  }
+
+  .hobby-item p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .home .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.5rem;
+  }
+
+  .typing-text {
+    font-size: 2.8rem;
+  }
+
+  main {
+    margin: 7rem auto 1.5rem auto;
+    padding: 1rem;
+  }
+
+  .education-section h1 {
+    font-size: 2.8rem;
+  }
+
+  .hobbies-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .hobby-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 1.5rem;
+  }
+}
